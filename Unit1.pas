@@ -58,7 +58,6 @@ type
     DbCidade: TDBEdit;
     DbEstado: TDBEdit;
     DbPais: TDBEdit;
-    SpeedButton1: TSpeedButton;
     NMSMTP1: TIdSMTP;
     BtnInserir: TBitBtn;
     BtnSalvar: TBitBtn;
@@ -191,6 +190,7 @@ begin
       BtnAlterar.Enabled := False;
       BtnExcluir.Enabled := False;
 
+      DbCEP.Enabled := True;
       BtnSalvar.Enabled := True;
       BtnCancelar.Enabled := True;
     end
@@ -200,6 +200,7 @@ begin
       BtnInserir.Enabled := True;
       BtnAlterar.Enabled := True;
 
+      DbCEP.Enabled := False;
       BtnSalvar.Enabled := False;
       BtnCancelar.Enabled := False;
 

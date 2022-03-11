@@ -225,12 +225,6 @@ object Form1: TForm1
       Height = 13
       Caption = 'Pa'#237's:'
     end
-    object SpeedButton1: TSpeedButton
-      Left = 306
-      Top = 188
-      Width = 55
-      Height = 22
-    end
     object DbCEP: TDBEdit
       Left = 12
       Top = 34
@@ -238,6 +232,7 @@ object Form1: TForm1
       Height = 21
       DataField = 'CEP'
       DataSource = DataSource1
+      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
