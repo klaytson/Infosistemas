@@ -230,7 +230,6 @@ var
   senha: String;
 
   idMsg: TIdMessage;
-  IdText: TIdText;
   idSMTP: TIdSMTP;
   IdSSLIOHandlerSocket: TIdSSLIOHandlerSocketOpenSSL;
 begin

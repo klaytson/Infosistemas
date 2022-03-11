@@ -117,12 +117,12 @@ begin
   'Email: ' + ClientDataSet1Email.Asstring + #10 +
   'CEP: ' + ClientDataSet1CEP.AsString + #10 +
   'Logradouro: ' + ClientDataSet1Logradouro.AsString + #10 +
-  'N√∫mero: ' + ClientDataSet1Numero.AsString + #10 +
+  'N˙mero: ' + ClientDataSet1Numero.AsString + #10 +
   'Complemento: ' + ClientDataSet1Complemento.AsString + #10 +
   'Bairro: ' + ClientDataSet1Bairro.AsString + #10 +
   'Cidade: ' + ClientDataSet1Cidade.AsString + #10 +
   'Estado: ' + ClientDataSet1Estado.AsString + #10 +
-  'Pa√≠s: ' + ClientDataSet1Pais.AsString;
+  'PaÌs: ' + ClientDataSet1Pais.AsString;
 
   With ClientDataSet1 Do
     begin
@@ -214,7 +214,7 @@ procedure TForm1.DbCEPExit(Sender: TObject);
 begin
   If(DbCEP.Text = '')Then
     begin
-      MessageDlg('O campo CEP √© de preenchimento obrigat√≥rio', MtWarning, [MbOk], 0);
+      MessageDlg('O campo CEP È de preenchimento obrigatÛrio', MtWarning, [MbOk], 0);
       DbCep.SetFocus;
     end
   else
@@ -230,12 +230,13 @@ var
   senha: String;
 
   idMsg: TIdMessage;
+  IdText: TIdText;
   idSMTP: TIdSMTP;
   IdSSLIOHandlerSocket: TIdSSLIOHandlerSocketOpenSSL;
 begin
   try
     try
-      //Par√¢metros do ssl
+      //Par‚metros do ssl
       IdSSLIOHandlerSocket := TIdSSLIOHandlerSocketOpenSSL.Create(Self);
       IdSSLIOHandlerSocket.SSLOptions.Method := sslvTLSv1_1;
       IdSSLIOHandlerSocket.SSLOptions.Mode  := sslmClient;
@@ -246,7 +247,7 @@ begin
       usuario := 'klaytson@gmail.com';
       senha := '';
 
-      //Par√¢metros MSG
+      //Par‚metros MSG
       idMsg                            := TIdMessage.Create(Self);
       idMsg.CharSet                    := 'utf-8';
       idMsg.Encoding                   := meMIME;
@@ -255,12 +256,12 @@ begin
       idMsg.Priority                   := mpNormal;
       idMsg.Subject                    := pAssunto;
 
-      //Destinat√°rio
+      //Destinat·rio
       idMsg.Recipients.Add;
       idMsg.Recipients.EMailAddresses := pDestino;
       idMsg.CCList.EMailAddresses      := 'klaytson@gmail.com';
 
-      //Prepara√ß√£o do Servidor
+      //PreparaÁ„o do Servidor
       IdSMTP                           := TIdSMTP.Create(Self);
       IdSMTP.IOHandler                 := IdSSLIOHandlerSocket;
       IdSMTP.UseTLS                    := utUseImplicitTLS;
@@ -271,7 +272,7 @@ begin
       IdSMTP.Username                  := usuario;
       IdSMTP.Password                  := senha;
 
-      // Conex√£o com o servidor de email e autentica√ß√£o
+      // Conex„o com o servidor de email e autenticaÁ„o
       IdSMTP.Connect;
       try
         IdSMTP.Authenticate;
@@ -294,7 +295,7 @@ begin
         end;
       end;
 
-      // Finaliza√ß√£o da conex√£o com o servidor
+      // FinalizaÁ„o da conex„o com o servidor
       if IdSMTP.Connected then
         IdSMTP.Disconnect;
 
